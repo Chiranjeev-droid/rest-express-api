@@ -29,9 +29,9 @@ const Product = new mongoose.model("Product", ProductSchema);
 app.post("/api/v1/product/new", async (req, res) => {
   await Product.create(req.body);
 
-  res.statusCode(200).json({
+  res.status(200).json({
     success: true,
-    Product,
+    data: req.body,
   });
 });
 app.get("/api/v1/get", (req, res) => {
